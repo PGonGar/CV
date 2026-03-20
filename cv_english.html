@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilar González – Computer Vision Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #2C3E50;
+    --accent-muted: #e8edf2;
+    --text: #1a1a1a;
+    --text-mid: #3d3d3d;
+    --text-light: #888;
+    --rule: #dde1e6;
+    --sidebar-bg: #f7f8fa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    background: #fff;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── SCREEN LAYOUT ── */
+  .page {
+    width: 210mm;
+    margin: 2.5rem auto;
+    background: #fff;
+    box-shadow: 0 6px 48px rgba(0,0,0,0.18);
+  }
+
+  header {
+    background: var(--accent);
+    padding: 2.6rem 3rem 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  header h1 {
+    font-family: 'Crimson Pro', serif;
+    font-weight: 300;
+    font-size: 2.8rem;
+    color: #fff;
+    line-height: 1;
+  }
+
+  header h1 span {
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+
+  .header-contact {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 2;
+  }
+
+  .header-contact a { color: rgba(255,255,255,0.78); text-decoration: none; }
+
+  /* Two-column body: aside floats RIGHT, main fills left */
+  .body-wrap {
+    overflow: hidden; /* clearfix */
+  }
+
+  aside {
+    float: right;
+    width: 31%;
+    background: var(--sidebar-bg);
+    padding: 2.4rem 1.8rem;
+    min-height: 230mm;
+  }
+
+  main {
+    overflow: hidden;
+    padding: 2.4rem 2.4rem 2.4rem 3rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  /* ── SHARED ELEMENTS ── */
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 0.4rem;
+    border-bottom: 1.5px solid var(--accent);
+    margin-bottom: 1.2rem;
+  }
+
+  section { margin-bottom: 2rem; }
+
+  .profile p {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.08rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-mid);
+  }
+
+  .competencies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.9rem;
+  }
+
+  .comp-tag {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    padding: 0.22rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  .employer {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    color: var(--text-light);
+    letter-spacing: 0.07em;
+    margin-bottom: 1.4rem;
+  }
+
+  .job {
+    margin-bottom: 1.8rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent-muted);
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+  }
+
+  .job-title {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  .job-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-light);
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .job p {
+    font-size: 0.82rem;
+    line-height: 1.68;
+    color: var(--text-mid);
+  }
+
+  .highlights {
+    margin-top: 0.55rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+  }
+
+  .hl {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    padding-left: 0.8rem;
+    position: relative;
+  }
+
+  .hl::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .job-note {
+    font-size: 0.74rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 1.4rem;
+    line-height: 1.6;
+    padding-left: 1rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  .project-row {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .project-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.28rem;
+  }
+
+  .project-name { font-size: 0.84rem; font-weight: 600; color: var(--text); }
+
+  .project-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-light);
+    white-space: nowrap;
+    margin-left: 0.8rem;
+  }
+
+  .project-role { font-size: 0.77rem; color: var(--text-mid); line-height: 1.5; }
+
+  /* Sidebar */
+  .skill-group { margin-bottom: 1.3rem; }
+
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.45rem;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.32rem; }
+
+  .tag {
+    background: var(--accent-muted);
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.59rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  .edu-item { margin-bottom: 1.1rem; }
+  .edu-item:last-child { margin-bottom: 0; }
+
+  .edu-degree { font-size: 0.8rem; font-weight: 500; color: var(--text); line-height: 1.35; }
+  .edu-school { font-family: 'DM Mono', monospace; font-size: 0.59rem; color: var(--text-light); margin-top: 0.14rem; }
+  .edu-thesis { font-size: 0.7rem; color: var(--text-light); font-style: italic; margin-top: 0.2rem; line-height: 1.4; }
+
+  .patent-title { font-size: 0.8rem; font-weight: 500; color: var(--text); margin-bottom: 0.18rem; line-height: 1.35; }
+  .patent-meta { font-family: 'DM Mono', monospace; font-size: 0.59rem; color: var(--text-light); margin-bottom: 0.18rem; }
+  .patent-desc { font-size: 0.71rem; color: var(--text-mid); font-style: italic; line-height: 1.45; }
+
+  .lang-item { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-mid); margin-bottom: 0.38rem; }
+  .lang-level { font-family: 'DM Mono', monospace; font-size: 0.59rem; color: var(--text-light); }
+
+  /* ── PRINT ── */
+  @page {
+    size: A4;
+    margin: 14mm 0;
+  }
+
+  @page :first {
+    margin-top: 0;
+  }
+
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    body { background: white; }
+
+    .page {
+      width: 100%;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    aside {
+      min-height: 0;
+    }
+
+    /* Only avoid breaks on small atomic units, NOT whole sections */
+    .job         { page-break-inside: avoid; break-inside: avoid; }
+    .project-row { page-break-inside: avoid; break-inside: avoid; }
+    .edu-item    { page-break-inside: avoid; break-inside: avoid; }
+    .skill-group { page-break-inside: avoid; break-inside: avoid; }
+    aside section { page-break-inside: avoid; break-inside: avoid; }
+
+    .section-title { page-break-after: avoid; break-after: avoid; }
+    .job-header    { page-break-after: avoid; break-after: avoid; }
+    .project-header { page-break-after: avoid; break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Pilar González<span>Computer Vision Engineer</span></h1>
+    <div class="header-contact">
+      Vigo, Spain &nbsp;·&nbsp; +34 650 752 053<br>
+      <a href="/cdn-cgi/l/email-protection#e9998085889b8e858c938e889ba98e84888085c78a8684"><span class="__cf_email__" data-cfemail="3141585d5043565d544b56504371565c50585d1f525e5c">[email&#160;protected]</span></a><br>
+      <a href="#">linkedin.com/in/yourprofile</a>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+
+    <!-- ASIDE floats right, must come first in DOM -->
+    <aside>
+
+      <section>
+        <div class="section-title">Technical Skills</div>
+        <div class="skill-group">
+          <div class="skill-group-title">Computer Vision</div>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">MediaPipe</span>
+            <span class="tag">OpenPose</span>
+            <span class="tag">OpenVINO</span>
+            <span class="tag">FLAME</span>
+            <span class="tag">Projective geometry</span>
+            <span class="tag">Camera calibration</span>
+            <span class="tag">Sensor fusion</span>
+            <span class="tag">Kalman filter</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Deep Learning</div>
+          <div class="skill-tags">
+            <span class="tag">YOLO</span>
+            <span class="tag">DETR</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Fine-tuning</span>
+            <span class="tag">Transfer learning</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Data</div>
+          <div class="skill-tags">
+            <span class="tag">CVAT</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Seaborn</span>
+            <span class="tag">Dataset EDA</span>
+            <span class="tag">Pre-labeling</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Tools</div>
+          <div class="skill-tags">
+            <span class="tag">GitLab</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">Conda</span>
+            <span class="tag">Matlab</span>
+            <span class="tag">VSCode</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">PGCEd – Education Sciences, Mathematics</div>
+          <div class="edu-school">University of Vigo · 2009</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">MSc Photonics &amp; Laser Technologies</div>
+          <div class="edu-school">University of Vigo · 2008</div>
+          <div class="edu-thesis">Optical aberrations in the human eye</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">MSc Industrial Engineering, Automation &amp; Electronics</div>
+          <div class="edu-school">University of Vigo · 2007</div>
+          <div class="edu-thesis">Pose control of a robotic arm using computer vision</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">Languages</div>
+        <div class="lang-item">Spanish <span class="lang-level">Native</span></div>
+        <div class="lang-item">English <span class="lang-level">B2</span></div>
+        <div class="lang-item">German <span class="lang-level">B1</span></div>
+      </section>
+
+      <section>
+        <div class="section-title">Patent</div>
+        <div class="patent-title">Lane Change Assistance with Adaptive Evaluation Zone</div>
+        <div class="patent-meta">ES2344880 · Co-inventor · 2012</div>
+        <div class="patent-desc">Vision and radar fusion for adaptive lane change safety assessment.</div>
+      </section>
+
+    </aside>
+
+    <!-- MAIN content -->
+    <main>
+
+      <section class="profile">
+        <div class="section-title">Profile</div>
+        <p>Computer vision engineer with 19 years developing automotive perception systems at CTAG. Deep technical focus on driver monitoring, deep learning pipelines, and camera geometry — from dataset construction to model fine-tuning and inference. Python-first. One patent. European and nationally funded R&D projects.</p>
+        <div class="competencies">
+          <span class="comp-tag">Computer Vision</span>
+          <span class="comp-tag">Driver Monitoring</span>
+          <span class="comp-tag">Deep Learning</span>
+          <span class="comp-tag">Data Analysis</span>
+          <span class="comp-tag">Camera Geometry</span>
+          <span class="comp-tag">Sensor Fusion</span>
+          <span class="comp-tag">Python</span>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">Experience</div>
+        <div class="employer">CTAG – Centro Tecnológico de Automoción de Galicia &nbsp;·&nbsp; 2007 – 2026</div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Driver Monitoring Systems</span>
+            <span class="job-date">2022 – 2026</span>
+          </div>
+          <p>Core development of interior perception functions in Python, from prototyping to integrated pipeline.</p>
+          <div class="highlights">
+            <div class="hl">Gaze estimation and pupillometry using OpenVINO pre-trained models for head pose and gaze direction</div>
+            <div class="hl">Hand-on-wheel detection and gesture recognition</div>
+            <div class="hl">3D facial modeling with FLAME; landmark estimation with MediaPipe and OpenPose</div>
+            <div class="hl">Object detection benchmark framework covering YOLO and DETR families</div>
+            <div class="hl">YOLO fine-tuning pipeline with automatic pre-labeling (CVAT + YOLOv7)</div>
+            <div class="hl">Large-scale dataset EDA: quality analysis, class balance, annotation consistency</div>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Multi-Camera Geometry &amp; Calibration</span>
+            <span class="job-date">2019 – 2025</span>
+          </div>
+          <p>Multi-camera bird's-eye-view reconstruction using homography and projective geometry. Optics selection. Intrinsic and extrinsic camera calibration. Collaboration on a camera–LiDAR calibration method using a genetic algorithm.</p>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Software Architect – ToF Gesture Recognition</span>
+            <span class="job-date">2016 – 2020</span>
+          </div>
+          <p>In-cabin gesture recognition module for a Time-of-Flight camera (ANTOLIN). Real-time depth correction modeling, VCSEL illumination study, optics selection. Separate: bird's-eye-view rear camera system for a bus (CASTROSUA).</p>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">ADAS – Sensor Fusion Research</span>
+            <span class="job-date">2007 – 2012</span>
+          </div>
+          <p>Sensor fusion at feature, data, and soft arbitration level for automated driving. Vehicle state observer using a Kalman filter. Co-inventor of patent ES2344880.</p>
+        </div>
+
+        <p class="job-note">Co-supervised 3 thesis students (1 MSc + 2 BSc), 2019–2021</p>
+      </section>
+
+      <section>
+        <div class="section-title">Research Projects</div>
+
+        <div class="project-row">
+          <div class="project-header">
+            <span class="project-name">HiDrive</span>
+            <span class="project-meta">H2020</span>
+          </div>
+          <div class="project-role">Driver attention monitoring for soft arbitration between driver and autonomous driving systems.</div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-header">
+            <span class="project-name">AVOIDANCE – Road Collision Smart Avoidance</span>
+            <span class="project-meta">INCITE09 · 2009–2012</span>
+          </div>
+          <div class="project-role">Radar + vision sensor fusion; Kalman filter for blind spot detection; soft arbitration for autonomous functions. Origin of patent ES2344880.</div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-header">
+            <span class="project-name">OPENER – Energy Recovery for Electric Vehicles</span>
+            <span class="project-meta">FP7 · 2010–2012</span>
+          </div>
+          <div class="project-role">Work Package coordination; energy-efficient driving 
