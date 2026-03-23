@@ -255,7 +255,9 @@
             <span class="tag">Geometría proyectiva</span>
             <span class="tag">Calibración de cámara</span>
             <span class="tag">Fusión de sensores</span>
-            <span class="tag">Filtro de Kalman</span>
+            <span class="tag">Kalman filter</span>
+            <span class="tag">SORT</span>
+            <span class="tag">ByteTrack</span>
           </div>
         </div>
         <div class="skill-group">
@@ -280,7 +282,7 @@
             <span class="tag">Matplotlib</span>
             <span class="tag">Seaborn</span>
             <span class="tag">Dataset EDA</span>
-            <span class="tag">Preetiquetado</span>
+            <span class="tag">Pre-labeling</span>
           </div>
         </div>
         <div class="skill-group">
@@ -322,7 +324,7 @@
       </section>
 
       <section>
-        <div class="section-title">Patente</div>
+        <div class="section-title">Patentes</div>
         <div class="patent-title">Sistema de Asistencia al Cambio de Carril con Zona de Evaluación Adaptativa</div>
         <div class="patent-meta">ES2344880 · Co-inventora · 2012</div>
         <div class="patent-desc">Fusión de visión y radar para evaluación adaptativa de seguridad en cambios de carril.</div>
@@ -335,7 +337,7 @@
 
       <section class="profile">
         <div class="section-title">Perfil</div>
-        <p>Ingeniera de visión por computador con 19 años desarrollando sistemas de percepción para automoción en CTAG. Enfoque técnico en monitorización del conductor, pipelines de deep learning y geometría de cámara — desde la construcción del dataset hasta el fine-tuning y la inferencia. Python como lenguaje principal. Una patente. Proyectos europeos y de I+D con financiación pública.</p>
+        <p>Ingeniera de visión por computador con 19 años desarrollando sistemas de percepción para automoción en CTAG. Enfoque técnico en monitorización del conductor, pipelines de deep learning y geometría de cámara — desde la construcción de datasets hasta el fine-tuning y la inferencia. Python como lenguaje principal. Una patente. Proyectos europeos y de I+D con financiación pública.</p>
         <div class="competencies">
           <span class="comp-tag">Visión por Computador</span>
           <span class="comp-tag">Monitorización del conductor</span>
@@ -356,23 +358,24 @@
             <span class="job-title">Sistemas de Monitorización del Conductor</span>
             <span class="job-date">2022 – 2026</span>
           </div>
-          <p>Desarrollo completo de funciones de percepción interior en Python, desde el prototipo hasta el pipeline integrado.</p>
+          <p>Desarrollo end-to-end de funciones de percepción interior en Python, desde el prototipo hasta el pipeline integrado.</p>
           <div class="highlights">
-            <div class="hl">Estimación de la mirada y pupilometría mediante modelos OpenVINO para inferencia de pose de cabeza y dirección de la mirada</div>
+            <div class="hl">Gaze estimation y pupilometría mediante modelos preentrenados de OpenVINO para head pose estimation y dirección de la mirada</div>
             <div class="hl">Detección de manos en el volante y reconocimiento de gestos</div>
-            <div class="hl">Modelado geométrico facial 3D con FLAME; landmarks con MediaPipe y OpenPose</div>
-            <div class="hl">Framework de benchmark para detección de objetos (familias YOLO y DETR)</div>
-            <div class="hl">Pipeline de fine-tuning de YOLO con preetiquetado automático (CVAT + YOLOv7)</div>
-            <div class="hl">Análisis exploratorio de datasets a gran escala: calidad, balance de clases, consistencia de anotaciones</div>
+            <div class="hl">3D facial modeling con FLAME; landmarks con MediaPipe y OpenPose</div>
+            <div class="hl">Framework de benchmarking para detección de objetos (familias YOLO y DETR)</div>
+            <div class="hl">Pipeline de fine-tuning de YOLO con pre-labeling automático (CVAT + YOLOv7)</div>
+            <div class="hl">EDA de datasets: selección de escenarios de conducción urbana, filtrado automático de frames por análisis de histograma, pre-labeling en CVAT con YOLOv7, revisión de anotaciones y propuesta de correcciones del dataset</div>
+            <div class="hl">Dataset de tracking: secuencias pre-etiquetadas con YOLOv7, aplicación de SORT y ByteTrack, revisión de etiquetas y EDA del dataset resultante</div>
           </div>
         </div>
 
         <div class="job">
           <div class="job-header">
-            <span class="job-title">Geometría Multicámara y Calibración</span>
+            <span class="job-title">Geometría multi-cámara y Calibración</span>
             <span class="job-date">2019 – 2025</span>
           </div>
-          <p>Sistema multicámara de reconstrucción bird's-eye-view mediante homografía y geometría proyectiva. Selección de ópticas. Calibración intrínseca y extrínseca. Colaboración en método de calibración cámara–LiDAR con algoritmo genético.</p>
+          <p>Sistema multicámara de reconstrucción bird's-eye-view mediante homografía y geometría proyectiva. Selección de ópticas. Calibración intrínseca y extrínseca. Colaboración en método de calibración cámara–LiDAR con algoritmo genético. Sistema de cámara trasera para parking con proyección BEV y trayectorias de dirección mediante modelo de bicicleta (CASTROSUA).</p>
         </div>
 
         <div class="job">
@@ -380,7 +383,7 @@
             <span class="job-title">Arquitecta de Software – Reconocimiento de Gestos ToF</span>
             <span class="job-date">2016 – 2020</span>
           </div>
-          <p>Módulo de reconocimiento de gestos en cabina para cámara ToF (ANTOLIN). Corrección de profundidad en tiempo real, estudio de iluminación VCSEL, selección de ópticas. Proyecto adicional: sistema de visión de cámara trasera con reconstrucción zenital para autobús (CASTROSUA).</p>
+          <p>Módulo de reconocimiento de gestos en cabina para cámara ToF (ANTOLIN). Corrección de profundidad en tiempo real, estudio de iluminación VCSEL, selección de ópticas.</p>
         </div>
 
         <div class="job">
@@ -388,7 +391,7 @@
             <span class="job-title">ADAS – Investigación en Fusión de Sensores</span>
             <span class="job-date">2007 – 2012</span>
           </div>
-          <p>Fusión de sensores a nivel de feature, dato y arbitraje blando para conducción automatizada. Observador del estado del vehículo con filtro de Kalman. Co-inventora de la patente ES2344880.</p>
+          <p>Fusión de sensores a nivel de feature, dato y arbitraje blando para conducción automatizada. Observador del estado del vehículo con filtro de Kalman. Sistema de detección de objetos en ángulo muerto mediante ultrasonidos. Co-inventora de la patente ES2344880.</p>
         </div>
 
         <p class="job-note">Co-tutorización de 3 trabajos fin de estudios (1 TFM + 2 TFG), 2019–2021</p>
@@ -416,6 +419,17 @@
         <div class="project-row">
           <div class="project-header">
             <span class="project-name">OPENER – Recuperación de Energía en Vehículos Eléctricos</span>
-            <span class="project-meta">FP7 · 2010–2012</span>
+              <span class="project-meta">FP7 · 2011–2014</span>
           </div>
-          <div class="project-role">Coordinación de Work Package
+          <div class="project-role">Proyecto FP7 con Bosch y PSA entre los socios. Estrategias de conducción energéticamente óptimas para vehículos eléctricos. Coordinación del Work Package de CTAG y preparación de revisiones ante la Comisión Europea.</div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div><!-- .body-wrap -->
+
+</div><!-- .page -->
+</body>
+</html>Coordinación de Work Package
